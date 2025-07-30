@@ -1,20 +1,21 @@
 local working = true
-
-local text = ""
-
+local text = "Hello, world!"
 local time = 8
 
 local function Changed()
-  game.StarterGui.TextLabel.Visible = true
-  game.StarterGui.TextLabel.Text = text
+    local player = game.Players.LocalPlayer
+    local label = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui"):WaitForChild("TextLabel")
 
-  wait(time)
+    label.Visible = true
+    label.Text = text
 
-  game.StarterGui.TextLabel.Visible = false
+    wait(time)
+
+    label.Visible = false
 end
 
-if working == true then
-  Changed()
+if working then
+    Changed()
 else
-  print("Not yet")
+    print("Not yet")
 end
