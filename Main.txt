@@ -1,0 +1,20 @@
+local working = true
+
+local text = ""
+
+local time = 8
+
+local function Changed()
+  game.StarterGui.TextLabel.Visible = true
+  game.StarterGui.TextLabel.Text = text
+
+  wait(time)
+
+  game.StarterGui.TextLabel.Visible = false
+end
+
+if working == true then
+  Changed()
+else
+  print("Not yet")
+end
